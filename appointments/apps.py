@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class PaginacaoConfig(AppConfig):
+class AppointmentsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'paginacao'
+    name = 'appointments'
