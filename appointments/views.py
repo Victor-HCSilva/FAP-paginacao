@@ -1,8 +1,7 @@
-from django.db import models
+#from django.db import models
 from rest_framework import generics
-from rest_framework.pagination import PageNumberPagination
+#from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter, OrderingFilter
-
 from .models import Patient, Doctor, Consultation
 from .serializers import ConsultationSerializer
 
@@ -11,8 +10,8 @@ from .serializers import ConsultationSerializer
 class ConsultationListView(generics.ListCreateAPIView):
     queryset = Consultation.objects.all()
     serializer_class = ConsultationSerializer
-    pagination_class = PageNumberPagination
-    pagination_class.page_size = 2  # Define o tamanho da página
+    #pagination_class = PageNumberPagination
+    #pagination_class.page_size = 2  # Define o tamanho da página
     filter_backends = [SearchFilter, OrderingFilter]  # Define os filtros
     search_fields = ['patient__name', 'doctor__name', 'description']  # Campos para busca
     ordering_fields = ['date', 'time']  # Campos para ordenação

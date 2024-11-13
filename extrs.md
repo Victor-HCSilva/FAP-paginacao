@@ -118,6 +118,57 @@ flowchart LR
     A --> B
     G --> A
 ```
-
 ![alt text](<Captura de tela_2024-11-12_21-04-44.png>)
+
+- urls.py - appoinments(app)
+
+![alt text](image-10.png)
+
+- serializers.py
+
+![alt text](image-7.png)
+
+![alt text](image-12.png)
+
+- Recebendo n dados da api:
+
+![alt text](image-11.png)
+
+
+- Recebendo apenas dois resultados por vez, configurando o settings.py:
+
+![alt text](image-9.png)
+
+![alt text](image.png)
+
+
+
+
+
+
+- usando o filtro de data, criado no serializers.py
+
+
+http://127.0.0.1:8000/api/consultations/?ordering=date
+
+
+![alt text](image-1.png)
+
+- usando 'rest_framework.pagination.PageNumberPagination':
+![alt text](image-2.png)
+
+
+![alt text](image-4.png)
+
+- Uso do 'rest_framework.pagination.CursorPagination': 
+
+```python
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.CursorPagination',
+    #'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 2,  # Exibe 2 itens por página
+}
+```
+![alt text](image-3.png)
+
 
